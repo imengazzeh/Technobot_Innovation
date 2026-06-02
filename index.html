@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technobot Innovation - Centre de Technologie Éducative</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- EN-TÊTE / LOGO -->
+    <header>
+        <div class="logo-container">
+            <img src="tech.jpg" alt="Technobot Innovation Logo" class="site-logo">
+            <div class="logo-text">
+                <h1>TECHNOBOT</h1>
+                <p>INNOVATION</p>
+            </div>
+        </div>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#clubs-section">Nos Clubs</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- SECTION ACCUEIL -->
+    <section id="accueil" class="hero-banner">
+        <div class="hero-content">
+            <h2>Centre de Technologie Éducative</h2>
+            <p>Découvrez nos ateliers de robotique, programmation et IA adaptés à chaque âge !</p>
+            <a href="#clubs-section" class="btn-main">Explorer les Clubs</a>
+        </div>
+    </section>
+
+    <!-- SECTION CLUBS & FILTRES -->
+    <section id="clubs-section">
+        <div class="section-title">
+            <h2>Choisissez l'âge de votre enfant</h2>
+            <p>Cliquez sur un âge pour afficher les activités disponibles</p>
+        </div>
+
+        <div class="age-filter-container">
+            <button class="btn-age active" onclick="filtrerAge('tous')">Tous</button>
+            <button class="btn-age" onclick="filtrerAge(5)">5 ans</button>
+            <button class="btn-age" onclick="filtrerAge(6)">6 ans</button>
+            <button class="btn-age" onclick="filtrerAge(7)">7 ans</button>
+            <button class="btn-age" onclick="filtrerAge(8)">8 ans</button>
+            <button class="btn-age" onclick="filtrerAge(9)">9 ans</button>
+            <button class="btn-age" onclick="filtrerAge(10)">10 ans</button>
+            <button class="btn-age" onclick="filtrerAge(11)">11 ans</button>
+            <button class="btn-age" onclick="filtrerAge(12)">12 ans</button>
+            <button class="btn-age" onclick="filtrerAge(13)">13 ans</button>
+            <button class="btn-age" onclick="filtrerAge(14)">14 ans</button>
+            <button class="btn-age" onclick="filtrerAge(15)">15 ans</button>
+            <button class="btn-age" onclick="filtrerAge(16)">16 ans</button>
+            <button class="btn-age" onclick="filtrerAge(17)">17 ans</button>
+        </div>
+
+        <div class="clubs-grid" id="clubsGrid">
+            <!-- Injecté par JS -->
+        </div>
+    </section>
+
+    <!-- FENÊTRE MODALE -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fermerModal()">&times;</span>
+            <h2 id="modalTitle">Titre de l'activité</h2>
+            <div class="modal-body">
+                <div class="modal-media">
+                    <img id="modalImage" src="" alt="Image de l'activité">
+                    <div class="video-container" id="modalVideoContainer"></div>
+                </div>
+                <div class="modal-info">
+                    <h3>Description du programme :</h3>
+                    <p id="modalDescription"></p>
+                    <p class="modal-age-badge">Âge : <span id="modalAgeRange"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION CONTACT -->
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <img src="tech.jpg" alt="Technobot" class="contact-logo">
+                <h3>Technobot Innovation</h3>
+                <p><strong>Adresse :</strong> Immobilière Bouhlel, 2ème étage, bureau N°6</p>
+                <p><strong>Téléphone :</strong> 27 765 805</p>
+                <p>N'hésitez pas à nous contacter pour inscrire vos enfants ou pour toute question !</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Technobot Innovation. Tous droits réservés. Bureau N°6 | N:27765805</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
