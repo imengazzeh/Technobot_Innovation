@@ -115,6 +115,15 @@ const clubsData = [
         description: "Entrez dans le monde des vrais makers. Câblage de circuits électroniques, utilisation de moteurs, capteurs et programmation en langage C++.",
         image: "arduino.webp",
         video: "arduino.mp4"
+    },
+    {
+        id: 14,
+        titre: "تحسين الخط (Calligraphie)",
+        ageMin: 6,
+        ageMax: 15,
+        description: "Un atelier dédié à l'amélioration de l'écriture et à la découverte de l'art de la calligraphie pour permettre aux enfants de développer une écriture soignée, fluide et lisible.",
+        image: "images/calligraphie.jpg", // Le chemin de l'image que vous allez ajouter
+        video: "videos/calligraphie.mp4"  // L'éventuelle vidéo (laissez vide "" si vous n'en avez pas encore)
     }
 ];
 
