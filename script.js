@@ -119,8 +119,8 @@ const clubsData = [
     {
         id: 14,
         titre: "تحسين الخط ",
-        ageMin: 6,
-        ageMax: 15,
+        ageMin: 5,
+        ageMax: 9,
         description: "Un atelier dédié à l'amélioration de l'écriture et à la découverte de l'art de la calligraphie pour permettre aux enfants de développer une écriture soignée, fluide et lisible.",
         image: "ta7sin.jpg", // Le chemin de l'image que vous allez ajouter
         video: ""  // L'éventuelle vidéo (laissez vide "" si vous n'en avez pas encore)
