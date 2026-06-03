@@ -365,3 +365,67 @@ footer {
     border: 1px solid var(--neon-blue);
     background-color: #000; /* Fond noir pour la vidéo */
 }
+/* Conteneur global des boutons flottants */
+.contact-buttons-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column; /* Aligne les boutons à la verticale */
+    gap: 12px; /* Espace entre les boutons */
+    z-index: 9999; /* Reste toujours au-dessus du site */
+}
+
+/* Style de base pour chaque bouton */
+.social-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol de la souris */
+.social-btn:hover {
+    transform: scale(1.15) translateY(-3px);
+}
+
+/* Couleurs spécifiques pour chaque réseau */
+.phone-btn {
+    background-color: #0072ff; /* Bleu pour le téléphone */
+}
+.phone-btn img {
+    filter: invert(1); /* Rend l'icône blanche */
+    width: 24px;
+    height: 24px;
+}
+
+.whatsapp-btn {
+    background-color: #25d366; /* Vert WhatsApp */
+}
+.whatsapp-btn img {
+    width: 32px;
+    height: 32px;
+}
+
+.facebook-btn {
+    background-color: #1877f2; /* Bleu officiel Facebook */
+}
+.facebook-btn img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Adaptation pour les petits écrans de téléphones */
+@media (max-width: 480px) {
+    .social-btn {
+        width: 48px;
+        height: 48px;
+    }
+    .social-btn img {
+        transform: scale(0.85);
+    }
+}
