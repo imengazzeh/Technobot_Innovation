@@ -124,7 +124,25 @@ const clubsData = [
         description: "Un atelier dédié à l'amélioration de l'écriture et à la découverte de l'art de la calligraphie pour permettre aux enfants de développer une écriture soignée, fluide et lisible.",
         image: "ta7sin.jpg",
         video: ""
-    }
+    },
+    {
+        id: 15,
+        titre: "Robotique Arduino kids",
+        ageMin: 7,
+        ageMax: 8,
+        description: "Entrez dans le monde des vrais makers. Câblage de circuits électroniques, utilisation de moteurs, capteurs et programmation en langage C++.",
+        image: "arduinokids.webp",
+        video: ""
+    },
+    {
+        id: 16,
+        titre: "الشطرنج",
+        ageMin: 7,
+        ageMax: 15,
+        description: "Entrez dans le monde des vrais makers. Câblage de circuits électroniques, utilisation de moteurs, capteurs et programmation en langage C++.",
+        image: "echec.jpg",
+        video: "echec.mp4"
+    },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
