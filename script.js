@@ -2,8 +2,8 @@ const clubsData = [
     {
         id: 1,
         titre: "Python Jeunes",
-        ageMin: 12,
-        ageMax: 13,
+        ageMin: 13,
+        ageMax: 16,
         description: "Apprenez les bases de la programmation avec Python. Idéal pour développer la logique algorithmique, créer des jeux textuels et manipuler les données.",
         image: "python.jpg",
         video: "python.mp4"
@@ -12,7 +12,7 @@ const clubsData = [
         id: 2,
         titre: "Python Kids",
         ageMin: 10,
-        ageMax: 11,
+        ageMax: 12,
         description: "Une introduction douce au langage Python avec des blocs et du code simple pour les jeunes créateurs de technologies.",
         image: "python.jpg",
         video: "python.mp4"
