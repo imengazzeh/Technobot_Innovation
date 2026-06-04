@@ -139,7 +139,7 @@ const clubsData = [
         titre: "الشطرنج",
         ageMin: 7,
         ageMax: 15,
-        description: "Entrez dans le monde des vrais makers. Câblage de circuits électroniques, utilisation de moteurs, capteurs et programmation en langage C++.",
+        description: "لعبة الشطرنج هي لعبة لوحية استراتيجية تُلعب بين لاعبين اثنين على رقعة مربعة مقسمة إلى 64\) مربعاً. يهدف كل لاعب إلى التفكير والتخطيط لحماية مَلِكه، وفي الوقت ذاته مهاجمة ومحاصرة ملك الخصم لوضعه في موقف كش",
         image: "echec.jpg",
         video: "echec.mp4"
     },
