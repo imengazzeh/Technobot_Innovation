@@ -245,28 +245,34 @@ window.onclick = function(event) {
         fermerModal();
     }
 }
-// Envoi du formulaire en arrière-plan (AJAX)
+// Envoi du formulaire en arrière-plan (AJAX) - VERSION CORRIGÉE
 document.addEventListener("DOMContentLoaded", () => {
     const formulaire = document.getElementById('form-client-inscription');
     if (formulaire) {
         formulaire.addEventListener('submit', function(e) {
-            e.preventDefault(); // Empêche de quitter le site
+            e.preventDefault(); // Bloque la redirection
 
+            // Convertir les données du formulaire en objet simple pour l'envoi JSON
             const formData = new FormData(this);
+            const objetDonnees = {};
+            formData.forEach((value, key) => {
+                objetDonnees[key] = value;
+            });
 
-            // Envoi secret vers FormSubmit
+            // Envoi invisible en arrière-plan
             fetch(this.action, {
                 method: 'POST',
-                body: formData,
                 headers: {
+                    'Content-Type': 'application/json',
                     'Accept': 'application/json'
-                }
+                },
+                body: JSON.stringify(objetDonnees) // Envoi des données proprement
             })
             .then(response => {
                 if (response.ok) {
-                    // 1. Afficher la petite fenêtre de succès
+                    // Afficher la jolie petite fenêtre
                     document.getElementById('popup-succes').style.display = 'flex';
-                    // 2. Vider les cases du formulaire
+                    // Vider les cases du formulaire
                     formulaire.reset();
                 } else {
                     alert("Une petite erreur est survenue, veuillez réessayer.");
