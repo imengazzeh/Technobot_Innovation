@@ -139,16 +139,18 @@ const clubsData = [
         titre: "الشطرنج",
         ageMin: 7,
         ageMax: 15,
-        description: "لعبة الشطرنج هي لعبة لوحية استراتيجية تُلعب بين لاعبين اثنين على رقعة مربعة مقسمة إلى 64\) مربعاً. يهدف كل لاعب إلى التفكير والتخطيط لحماية مَلِكه، وفي الوقت ذاته مهاجمة ومحاصرة ملك الخصم لوضعه في موقف كش",
+        description: " لعبة الشطرنج هي لعبة لوحية استراتيجية تُلعب بين لاعبين اثنين على رقعة مربعة مقسمة إلى 64 مربعاً. يهدف كل لاعب إلى التفكير والتخطيط لحماية مَلِكه، وفي الوقت ذاته مهاجمة ومحاصرة ملك الخصم لوضعه في موقف كش ",
         image: "echec.jpg",
         video: "echec.mp4"
     },
 ];
 
+// Initialisation au chargement de la page
 document.addEventListener("DOMContentLoaded", () => {
     filtrerAge('tous');
 });
 
+// Fonction de filtrage des clubs par âge
 function filtrerAge(ageSelectionne) {
     const boutons = document.querySelectorAll('.btn-age');
     boutons.forEach(btn => btn.classList.remove('active'));
@@ -158,6 +160,7 @@ function filtrerAge(ageSelectionne) {
     }
 
     const grid = document.getElementById('clubsGrid');
+    if (!grid) return;
     grid.innerHTML = "";
 
     let clubsFiltres = [];
@@ -177,6 +180,7 @@ function filtrerAge(ageSelectionne) {
     clubsFiltres.forEach(club => {
         const carte = document.createElement('div');
         carte.className = "club-card";
+        carte.style.cursor = "pointer";
         carte.onclick = () => ouvrirModal(club.id);
         
         carte.innerHTML = `
@@ -184,12 +188,17 @@ function filtrerAge(ageSelectionne) {
             <div class="club-info">
                 <h3>${club.titre}</h3>
                 <span class="age-badge">${club.ageMin} - ${club.ageMax} ans</span>
+                
+                <p style="color: #00f2ff; font-size: 0.85rem; margin-top: 12px; font-weight: bold; font-style: italic; text-align: center;">
+                    ✨ Cliquer ici pour plus d'informations sur ce club
+                </p>
             </div>
         `;
         grid.appendChild(carte);
     });
 }
 
+// Gestion de la modale de détails
 function ouvrirModal(idClub) {
     const club = clubsData.find(c => c.id === idClub);
     if (!club) return;
@@ -201,14 +210,14 @@ function ouvrirModal(idClub) {
     const imgElement = document.getElementById('modalImage');
     const videoContainer = document.getElementById('modalVideoContainer');
     
-    // Réinitialiser la vidéo
+    // Réinitialiser le contenu vidéo
     videoContainer.innerHTML = "";
 
-    // On affiche l'image
+    // Affichage de l'image
     imgElement.src = club.image;
     imgElement.style.display = "block";
 
-    // Si une vidéo existe, on l'affiche aussi
+    // Affichage de la vidéo si elle existe
     if (club.video) {
         videoContainer.style.display = "block";
         videoContainer.innerHTML = `
@@ -229,6 +238,7 @@ function fermerModal() {
     document.getElementById('modalVideoContainer').innerHTML = "";
 }
 
+// Fermeture en cliquant en dehors de la modale
 window.onclick = function(event) {
     const modal = document.getElementById('detailsModal');
     if (event.target == modal) {
