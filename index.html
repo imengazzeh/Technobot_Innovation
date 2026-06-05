@@ -27,6 +27,7 @@
             <a href="#accueil">Accueil</a>
             <a href="#clubs-section">Nos Clubs</a>
             <a href="#contact">Contact</a>
+            <a href="#inscription-section" class="nav-btn-inscription">S'inscrire</a>
         </nav>
     </header>
 
@@ -124,5 +125,56 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
     </a>
 </div>
+<section id="inscription-section" style="padding: 50px 20px; max-width: 600px; margin: 40px auto; background: #0a192f; border: 2px solid #00f2ff; border-radius: 12px; color: white;">
+    <h2 style="color: #00f2ff; text-align: center;">Inscription en ligne</h2>
+    <p style="text-align: center; color: #a0aec0; margin-bottom: 25px;">Remplissez ce formulaire pour pré-inscrire votre enfant.</p>
+    
+    <form action="https://formsubmit.co/imengazzeh5@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+    
+    <div>
+        <label>Nom et Prénom du Parent :</label>
+        <input type="text" name="Nom du Parent" required style="width:100%; padding:10px; background:#0f172a; border:1px solid #334155; color:white; border-radius:6px;">
+    </div>
+    <div>
+        <label>Nom et Prénom de l'enfant :</label>
+        <input type="text" name="Nom de l'Enfant" required style="width:100%; padding:10px; background:#0f172a; border:1px solid #334155; color:white; border-radius:6px;">
+    </div>
+    <div>
+        <label>Date de naissance de l'enfant :</label>
+        <input type="date" name="Date de Naissance" required style="width:100%; padding:10px; background:#0f172a; border:1px solid #334155; color:white; border-radius:6px;">
+    </div>
+    <div>
+        <label>Numéro de téléphone (8 chiffres) :</label>
+        <input type="tel" name="Téléphone" required pattern="[0-9]{8}" title="Le numéro doit contenir 8 chiffres." style="width:100%; padding:10px; background:#0f172a; border:1px solid #334155; color:white; border-radius:6px;">
+    </div>
+    <div>
+        <label>Choisir un Club :</label>
+        <select id="select-club-inscription" name="Club Choisi" required style="width:100%; padding:10px; background:#0f172a; border:1px solid #334155; color:white; border-radius:6px;">
+            <option value="" disabled selected>Choisir un club...</option>
+            <option value="Python Jeunes">Python Jeunes (13-16 ans)</option>
+            <option value="Python Kids">Python Kids (10-12 ans)</option>
+            <option value="WeDo (Robotique)">WeDo (Robotique) (5-8 ans)</option>
+            <option value="Calcul Mental">Calcul Mental (5-15 ans)</option>
+            <option value="Scratch Jeunes">Scratch Jeunes (12-13 ans)</option>
+            <option value="Scratch Kids">Scratch Kids (9-11 ans)</option>
+            <option value="Initiation à l'Intelligence Artificielle (IA)">Initiation à l'Intelligence Artificielle (IA) (9-11 ans)</option>
+            <option value="Robotique IA Kids">Robotique IA Kids (9-13 ans)</option>
+            <option value="Micro:bit">Micro:bit (10-13 ans)</option>
+            <option value="SolidWorks (Modélisation 3D)">SolidWorks (Modélisation 3D) (10-15 ans)</option>
+            <option value="Montage Vidéo">Montage Vidéo (13-16 ans)</option>
+            <option value="Anglais Tech & Ludique">Anglais Tech & Ludique (6-15 ans)</option>
+            <option value="Robotique Arduino">Robotique Arduino (9-15 ans)</option>
+            <option value="تحسين الخط">تحسين الخط (5-9 ans)</option>
+            <option value="Robotique Arduino kids">Robotique Arduino kids (7-8 ans)</option>
+            <option value="الشطرنج">الشطرنج (7-15 ans)</option>
+        </select>
+    </div>
+    
+    <input type="hidden" name="_captcha" value="false">
+    
+    <button type="submit" style="padding:15px; background:linear-gradient(135deg, #00f2ff, #0072ff); border:none; color:white; font-weight:bold; border-radius:6px; cursor:pointer; margin-top: 10px;">Envoyer ma demande d'inscription</button>
+</form>
+</section>
+
 </body>
 </html>
