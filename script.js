@@ -245,3 +245,41 @@ window.onclick = function(event) {
         fermerModal();
     }
 }
+// Envoi du formulaire en arrière-plan (AJAX)
+document.addEventListener("DOMContentLoaded", () => {
+    const formulaire = document.getElementById('form-client-inscription');
+    if (formulaire) {
+        formulaire.addEventListener('submit', function(e) {
+            e.preventDefault(); // Empêche de quitter le site
+
+            const formData = new FormData(this);
+
+            // Envoi secret vers FormSubmit
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // 1. Afficher la petite fenêtre de succès
+                    document.getElementById('popup-succes').style.display = 'flex';
+                    // 2. Vider les cases du formulaire
+                    formulaire.reset();
+                } else {
+                    alert("Une petite erreur est survenue, veuillez réessayer.");
+                }
+            })
+            .catch(error => {
+                alert("Erreur de connexion. Vérifiez votre réseau.");
+            });
+        });
+    }
+});
+
+// Fonction pour fermer la petite fenêtre
+function fermerPopupSucces() {
+    document.getElementById('popup-succes').style.display = 'none';
+}
