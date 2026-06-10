@@ -246,31 +246,24 @@ window.onclick = function(event) {
     }
 }
 // Envoi du formulaire en arrière-plan (AJAX) - VERSION CORRIGÉE
+// Envoi du formulaire en arrière-plan (AJAX) - VERSION FINALE PRO
 document.addEventListener("DOMContentLoaded", () => {
     const formulaire = document.getElementById('form-client-inscription');
     if (formulaire) {
         formulaire.addEventListener('submit', function(e) {
-            e.preventDefault(); // Bloque la redirection
+            e.preventDefault(); // Bloque la redirection forcée
 
-            // Convertir les données du formulaire en objet simple pour l'envoi JSON
-            const formData = new FormData(this);
-            const objetDonnees = {};
-            formData.forEach((value, key) => {
-                objetDonnees[key] = value;
-            });
-
-            // Envoi invisible en arrière-plan
+            // Envoi au format URL-encoded (parfaitement lu par FormSubmit)
             fetch(this.action, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify(objetDonnees) // Envoi des données proprement
+                body: new URLSearchParams(new FormData(this))
             })
             .then(response => {
                 if (response.ok) {
-                    // Afficher la jolie petite fenêtre
+                    // Afficher la jolie petite fenêtre de succès
                     document.getElementById('popup-succes').style.display = 'flex';
                     // Vider les cases du formulaire
                     formulaire.reset();
@@ -279,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             })
             .catch(error => {
-                alert("Erreur de connexion. Vérifiez votre réseau.");
+                alert("Erreur de connexion. Vérifiez votre réseau ou testez en ligne.");
             });
         });
     }
